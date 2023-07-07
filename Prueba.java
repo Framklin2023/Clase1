@@ -13,6 +13,10 @@ public class Prueba {
             res = MisExcepcionesExceptions.divP(n1, n2);
         } catch (Exception e) {
             System.out.println(e);
+        } finally {
+            sc.close();
+            System.out.println("Siempre entra al Finally");
+
         }
 
         System.out.println("Funciona y da el valor :" + res);
