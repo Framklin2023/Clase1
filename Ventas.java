@@ -1,4 +1,4 @@
-public class Ventas {
+public class Ventas implements Comparable<Ventas> {
     private Integer id;
     private String codFactura;
     private float monto;
@@ -87,6 +87,17 @@ public class Ventas {
         if (Float.floatToIntBits(monto) != Float.floatToIntBits(other.monto))
             return false;
         return true;
+    }
+
+    @Override
+    public int compareTo(Ventas o) {
+        // int vre = 0;
+        // float dif = this.getMonto() - o.getMonto();
+        // if (dif != 0)
+        // vre = (dif > 0) ? 1 : -1;
+        // return (int) (this.getMonto() - o.getMonto());
+        // return (int) (o.getMonto() - this.getMonto());
+        return o.getCodFactura().compareTo(this.getCodFactura());
     }
 
 }
