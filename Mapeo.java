@@ -5,6 +5,14 @@ public class Mapeo {
     public static void main(String[] args) {
 
         // List<Float> lfs = Arrays.asList(34f, 2.3f, 44f, 89f, 23.4f);
+        // lfs.forEach(a -> { int i = 1; System.out.println(i + " " + a); i++; });
+        // System.out.println("\n-----------------------------------------------\n");
+        // Collections.sort(lfs);
+        // lfs.forEach(a -> {
+        // int i = 1;
+        // System.out.println(i + " " + a);
+        // i++;
+        // });
         // Float total = lfs.stream().reduce(0f, (s, e) -> s + e);
         // lfs.forEach(a -> System.out.println(a));
         // System.out.println("\n-----------------------------------------------\n");
@@ -19,18 +27,48 @@ public class Mapeo {
         Ventas v3 = new Ventas("Fut076", 21f);
         Ventas v4 = new Ventas("Aba123", 12.8f);
         List<Ventas> vts = new ArrayList<>();
-        vts.add(v1);
-        vts.add(v2);
-        vts.add(v3);
-        vts.add(v4);
+        vts = Arrays.asList(v1, v2, v3, v4);
+        List<String> cods = new ArrayList<>();
+        // vts.forEach(a -> cods.add(a.getCodFactura()));
         System.out.println("\n-----------------------------------------------\n");
+        // cods.forEach(a -> System.out.println(a));
+        Double total = vts.stream().mapToDouble(a -> a.getMonto()).reduce(0, (a, e) -> a + e);
+        // Collections.sort(cods);
         Collections.sort(vts);
         vts.forEach(a -> {
             int i = 1;
-            System.out.printf("\n Venta %2d - Código : %9s, monto S/ %4.2f ", i, a.getCodFactura(), a.getMonto());
+            System.out.printf("\n%2d Factura: %8s, monto %4.2f \n", i, a.getCodFactura(), a.getMonto());
             i++;
         });
-        System.out.println("\n-----------------------------------------------\n");
+        System.out.printf("\nEl total es S/ %5.2f", total);
+        // Collections.sort(vts);
+        System.out.println(" \nHay :" + vts.stream().filter(a -> a.equals(new Ventas(3, "Fut076", 21f))).toList());
+        // System.out.println("\n-----------------------------------------------\n");
+        // // cods.forEach(a -> System.out.println(a));
+        // vts.forEach(a -> System.out.println(a));
+
+        // Set<String> cvts2 = new TreeSet<String>();
+        // vts.forEach(a -> cvts2.add(a.getCodFactura()));
+        // // for(Ventas a:vts){
+        // cvts2.add(a.getCodFactura());
+        // }
+
+        // vts.add(v1);
+        // vts.add(v2);
+        // vts.add(v3);
+        // vts.add(v4);
+        // System.out.println("\n-----------------------------------------------\n");
+        // // Collections.sort(vts);
+        // vts.forEach(a -> {
+        // int i = 1;
+        // System.out.printf("\n Venta %2d - Código : %9s, monto S/ %4.2f ", i,
+        // a.getCodFactura(), a.getMonto());
+        // i++;
+        // });
+        // System.out.println("\n-----------------------------------------------\n");
+        // cvts2.forEach(a -> System.out.println(a));
+        // System.out.println("\n-----------------------------------------------\n");
+
         // Double totalventas = vts.stream().mapToDouble(a -> a.getMonto()).reduce(0f,
         // (s, e) -> s + e);
         // System.out.printf("\nVentas totales : %4.2f \n", totalventas);
