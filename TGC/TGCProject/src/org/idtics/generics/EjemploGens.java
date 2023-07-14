@@ -10,19 +10,21 @@ import org.idtics.clases.modelo.Interno;
 public class EjemploGens {
     public static void main(String[] args) {
 
+        String[] stringsArreglo = { "Uno", "Dos", "Tres", "Cuatro", "Cinco", "Seis" };
+        System.out.println("-------------------------------------------------------------");
+        List<String> stringsLista = fromArrayToListString(stringsArreglo);
+        stringsLista.forEach(e -> System.out.println(e));
+
         List<Externo> externos = new ArrayList<>();
         externos.add(new Externo("Lebrón", "Messi"));
 
         // Externo LisExts = externos.iterator().next();
-        String[] stringsArreglo = { "Uno", "Dos", "Tres", "Cuatro", "Cinco", "Seis" };
 
         Externo[] externosArreglo = { new Externo("Luca", "Modric"),
                 new Externo("Lebrón", "Messi") };
         Integer[] enterosArreglo = { 1, 2, 3, 4, 5 };
         Float[] floatsArreglo = { 3.9f, 11.8f, 12.7f, 13.6f, 14.5f };
-        System.out.println("-------------------------------------------------------------");
-        List<String> stringsLista = fromArrayToListString(stringsArreglo);
-        stringsLista.forEach(e -> System.out.println(e));
+
         System.out.println("-------------------------------------------------------------");
         List<Externo> externosLista = fromArrayToList(externosArreglo);
         List<Integer> enterosLista = fromArrayToList(enterosArreglo);
@@ -35,8 +37,8 @@ public class EjemploGens {
         floatsLista.forEach(e -> System.out.println(e));
         System.out.println("-------------------------------------------------------------");
 
-        List<String> nombres = fromArrayToList(new String[] { "Uno", "Dos",
-                "Tres", "Cuatro", "Cinco" }, enterosArreglo);
+        List<String> nombres = fromArrayToList(new String[] { "One", "Two",
+                "Three", "Four", "Five" }, enterosArreglo);
         nombres.forEach(System.out::println);
 
         List<Interno> externosPremiumList = fromArrayToList(
@@ -53,6 +55,7 @@ public class EjemploGens {
 
     }
 
+    // ----------------
     public static List<String> fromArrayToListString(String[] c) {
         return Arrays.asList(c);
     }

@@ -2,7 +2,7 @@ package org.idtics.hilos.ejemplos;
 
 // import org.idtics.hilos.ejemplos.runnable.ClaseTarea;
 
-public class EjemploInterfaceRunnableJava8 {
+public class EjemploInterfaceRunnable2 {
     public static void main(String[] args) throws InterruptedException {
 
         Thread main = Thread.currentThread();
@@ -15,13 +15,13 @@ public class EjemploInterfaceRunnableJava8 {
                     e.printStackTrace();
                 }
             }
-            System.out.println("Finalmente me voy de viaje a: " + Thread.currentThread().getName());
+            System.out.println("Finalmente : " + Thread.currentThread().getName());
             System.out.println(main.getState());
         };
 
         Thread v1 = new Thread(viaje, "Definir necesidades");
-        Thread v2 = new Thread(viaje, "Dise\u00F1ar soluci\u00F3n");
-        Thread v3 = new Thread(viaje, "Implementar soluci\u00F3n");
+        Thread v2 = new Thread(viaje, "Diseñar solución");
+        Thread v3 = new Thread(viaje, "Implementar solución");
         Thread v4 = new Thread(viaje, "Hacer pruebas");
         Thread v5 = new Thread(viaje, "Tareas posteriores");
 
