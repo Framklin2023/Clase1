@@ -1,7 +1,7 @@
 package mytest2;
 
-import org.idtics.myinterfaces.modelo.Externo;
-import org.idtics.myinterfaces.modelo.Interno;
+import org.idtics.clases.modelo.Externo;
+import org.idtics.clases.modelo.Interno;
 
 public class ProbarModelos {
     public static void main(String[] args) {

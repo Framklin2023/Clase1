@@ -2,8 +2,8 @@ package mytest1;
 
 import java.util.List;
 
-import org.idtics.myinterfaces.codigos.*;
-import org.idtics.myinterfaces.modelo.Externo;
+import org.idtics.clases.interfaces.*;
+import org.idtics.clases.modelo.Externo;
 
 public class Prueba {
     public static void main(String[] args) {

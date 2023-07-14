@@ -1,8 +1,8 @@
-package org.idtics.myinterfaces.codigos;
+package org.idtics.clases.interfaces;
 
 import java.util.List;
 
-import org.idtics.myinterfaces.modelo.Externo;
+import org.idtics.clases.modelo.Externo;
 
 public interface Crud {
     List<Externo> listar();

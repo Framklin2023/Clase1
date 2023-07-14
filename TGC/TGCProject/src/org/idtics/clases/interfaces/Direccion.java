@@ -1,4 +1,4 @@
-package org.idtics.myinterfaces.codigos;
+package org.idtics.clases.interfaces;
 
 public enum Direccion {
     ASC, DESC

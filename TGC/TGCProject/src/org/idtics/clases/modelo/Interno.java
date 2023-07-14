@@ -1,6 +1,6 @@
-package org.idtics.myinterfaces.modelo;
+package org.idtics.clases.modelo;
 
-public class Interno  extends Externo implements Comparable<Interno>{
+public class Interno extends Externo implements Comparable<Interno> {
     public Interno(String nombre, String apellido) {
         super(nombre, apellido);
     }

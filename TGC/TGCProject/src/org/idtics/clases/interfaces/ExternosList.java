@@ -1,10 +1,10 @@
-package org.idtics.myinterfaces.codigos;
+package org.idtics.clases.interfaces;
 
 import java.util.ArrayList;
-import java.util.Comparator;
+// import java.util.Comparator;
 import java.util.List;
 
-import org.idtics.myinterfaces.modelo.Externo;
+import org.idtics.clases.modelo.Externo;
 
 public class ExternosList implements OrdenarpgsCrud {
 

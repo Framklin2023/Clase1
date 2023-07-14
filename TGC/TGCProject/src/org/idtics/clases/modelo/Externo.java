@@ -1,4 +1,4 @@
-package org.idtics.myinterfaces.modelo;
+package org.idtics.clases.modelo;
 
 import java.util.Objects;
 
@@ -51,8 +51,10 @@ public class Externo {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
         Externo cliente = (Externo) o;
         return Objects.equals(id, cliente.id);
     }
