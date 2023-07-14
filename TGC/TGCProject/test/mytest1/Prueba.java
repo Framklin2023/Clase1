@@ -13,16 +13,20 @@ public class Prueba {
         listord.crear(new Externo("Mario", "Vargas"));
         listord.crear(new Externo("David", "Martínez"));
         listord.crear(new Externo("Pamela", "Franco"));
+        listord.crear(new Externo("Vianny", "Rojas"));
+        listord.crear(new Externo("Giselle", "Dávila"));
+        listord.crear(new Externo("Daniel", "Otárolaz"));
+        listord.crear(new Externo("Luis", "Quispe"));
 
-        List<Externo> clientes = listord.listar();
-        clientes.forEach(System.out::println);
+        List<Externo> externos = listord.listar();
+        externos.forEach(System.out::println);
         System.out.println("===== paginable =====");
-        List<Externo> paginable = listord.listar(1, 4);
+        List<Externo> paginable = listord.listar(1, 8);
         paginable.forEach(System.out::println);
 
         System.out.println("===== ordenar =====");
-        List<Externo> clientesOrdenAsc = listord.listar("apellido", Direccion.ASC);
-        for (Externo c : clientesOrdenAsc) {
+        List<Externo> externosOrdenAsc = listord.listar("apellido", Direccion.ASC);
+        for (Externo c : externosOrdenAsc) {
             System.out.println(c);
         }
 
