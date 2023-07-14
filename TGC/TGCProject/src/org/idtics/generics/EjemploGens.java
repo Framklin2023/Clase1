@@ -14,19 +14,29 @@ public class EjemploGens {
         externos.add(new Externo("Lebrón", "Messi"));
 
         // Externo LisExts = externos.iterator().next();
+        String[] stringsArreglo = { "Uno", "Dos", "Tres", "Cuatro", "Cinco", "Seis" };
 
         Externo[] externosArreglo = { new Externo("Luca", "Modric"),
                 new Externo("Lebrón", "Messi") };
-        Integer[] enterosArreglo = { 1, 2, 3 };
-
+        Integer[] enterosArreglo = { 1, 2, 3, 4, 5 };
+        Float[] floatsArreglo = { 3.9f, 11.8f, 12.7f, 13.6f, 14.5f };
+        System.out.println("-------------------------------------------------------------");
+        List<String> stringsLista = fromArrayToListString(stringsArreglo);
+        stringsLista.forEach(e -> System.out.println(e));
+        System.out.println("-------------------------------------------------------------");
         List<Externo> externosLista = fromArrayToList(externosArreglo);
         List<Integer> enterosLista = fromArrayToList(enterosArreglo);
+        List<Float> floatsLista = fromArrayToList(floatsArreglo);
 
-        externosLista.forEach(System.out::println);
-        enterosLista.forEach(System.out::println);
+        externosLista.forEach(e -> System.out.println(e));
+        System.out.println("-------------------------------------------------------------");
+        enterosLista.forEach(e -> System.out.println(e));
+        System.out.println("-------------------------------------------------------------");
+        floatsLista.forEach(e -> System.out.println(e));
+        System.out.println("-------------------------------------------------------------");
 
-        List<String> nombres = fromArrayToList(new String[] { "Andrés", "Pepe",
-                "Luci", "Bea", "John" }, enterosArreglo);
+        List<String> nombres = fromArrayToList(new String[] { "Uno", "Dos",
+                "Tres", "Cuatro", "Cinco" }, enterosArreglo);
         nombres.forEach(System.out::println);
 
         List<Interno> externosPremiumList = fromArrayToList(
@@ -41,6 +51,10 @@ public class EjemploGens {
         System.out.println("Máximo de zanahoria, arándanos, manzana es: "
                 + maximo("zanahoria", "arándano", "manzana"));
 
+    }
+
+    public static List<String> fromArrayToListString(String[] c) {
+        return Arrays.asList(c);
     }
 
     public static <T> List<T> fromArrayToList(T[] c) {
