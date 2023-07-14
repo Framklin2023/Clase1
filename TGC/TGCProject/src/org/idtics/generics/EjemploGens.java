@@ -1,66 +1,88 @@
 package org.idtics.generics;
 
-import java.util.ArrayList;
+// import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 import org.idtics.clases.modelo.Externo;
-import org.idtics.clases.modelo.Interno;
+// import org.idtics.clases.modelo.Interno;
 
 public class EjemploGens {
     public static void main(String[] args) {
-
-        String[] stringsArreglo = { "Uno", "Dos", "Tres", "Cuatro", "Cinco", "Seis" };
         System.out.println("-------------------------------------------------------------");
-        List<String> stringsLista = fromArrayToListString(stringsArreglo);
-        stringsLista.forEach(e -> System.out.println(e));
-
-        List<Externo> externos = new ArrayList<>();
-        externos.add(new Externo("Lebrón", "Messi"));
-
-        // Externo LisExts = externos.iterator().next();
-
-        Externo[] externosArreglo = { new Externo("Luca", "Modric"),
-                new Externo("Lebrón", "Messi") };
-        Integer[] enterosArreglo = { 1, 2, 3, 4, 5 };
+        Integer[] numeros = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+        List<Integer> numeroList = fromArrayToList(numeros);
+        // List<Integer> numeroList = fromArrayToListIntegers(numeros);
+        numeroList.forEach(e -> System.out.println(e));
+        System.out.println("-------------------------------------------------------------");
+        String[] stringsArreglo = { "Uno", "Dos", "Tres", "Cuatro", "Cinco", "Seis", "Siete", "Ocho", "Nueve", "Diez" };
+        List<String> stringsList = fromArrayToList(stringsArreglo);
+        // stringsLista.forEach(e -> System.out.println(e));
+        stringsList.forEach(System.out::println);
+        System.out.println("-------------------------------------------------------------");
         Float[] floatsArreglo = { 3.9f, 11.8f, 12.7f, 13.6f, 14.5f };
-
+        List<Float> floatsList = fromArrayToList(floatsArreglo);
+        floatsList.forEach(System.out::println);
         System.out.println("-------------------------------------------------------------");
-        List<Externo> externosLista = fromArrayToList(externosArreglo);
-        List<Integer> enterosLista = fromArrayToList(enterosArreglo);
-        List<Float> floatsLista = fromArrayToList(floatsArreglo);
-
-        externosLista.forEach(e -> System.out.println(e));
+        Externo[] externosArreglo = {
+                new Externo("Luca", "Modric"),
+                new Externo("Lebrón", "Messi"),
+                new Externo("María", "Bonita"),
+                new Externo("Ivanna", "Iturbe") };
+        // List<Externo> externosList = fromArrayToList(externosArreglo);
+        // externosList.forEach(System.out::println);
+        List<Externo> externosList = fromArrayToListaPrint(externosArreglo, floatsArreglo);
+        externosList.forEach(System.out::println);
         System.out.println("-------------------------------------------------------------");
-        enterosLista.forEach(e -> System.out.println(e));
-        System.out.println("-------------------------------------------------------------");
-        floatsLista.forEach(e -> System.out.println(e));
-        System.out.println("-------------------------------------------------------------");
+        // List<Externo> externos = new ArrayList<>();c
+        // externos.add(new Externo("Lebrón", "Messi"));
 
-        List<String> nombres = fromArrayToList(new String[] { "One", "Two",
-                "Three", "Four", "Five" }, enterosArreglo);
-        nombres.forEach(System.out::println);
+        // // Externo LisExts = externos.iterator().next();
 
-        List<Interno> externosPremiumList = fromArrayToList(
-                new Interno[] { new Interno("Paco", "Fernández") });
+        // Externo[] externosArreglo = { new Externo("Luca", "Modric"),
+        // new Externo("Lebrón", "Messi") };
 
-        imprimirexternos(externos);
-        imprimirexternos(externosLista);
-        imprimirexternos(externosPremiumList);
+        // System.out.println("-------------------------------------------------------------");
+        // List<Externo> externosLista = fromArrayToList(externosArreglo);
+        // List<Integer> enterosLista = fromArrayToList(enterosArreglo);
+        // List<Float> floatsLista = fromArrayToList(floatsArreglo);
 
-        System.out.println("Máximo de 1, 9 y 4 es: " + maximo(1, 9, 4));
-        System.out.println("Máximo de 3.9, 11.6, 7.78 es: " + maximo(3.9, 11.6, 7.78));
-        System.out.println("Máximo de zanahoria, arándanos, manzana es: "
-                + maximo("zanahoria", "arándano", "manzana"));
+        // externosLista.forEach(e -> System.out.println(e));
+        // System.out.println("-------------------------------------------------------------");
+        // enterosLista.forEach(e -> System.out.println(e));
+        // System.out.println("-------------------------------------------------------------");
+        // floatsLista.forEach(e -> System.out.println(e));
+        // System.out.println("-------------------------------------------------------------");
+
+        // List<String> nombres = fromArrayToList(new String[] { "One", "Two",
+        // "Three", "Four", "Five" }, enterosArreglo);
+        // nombres.forEach(System.out::println);
+
+        // List<Interno> externosPremiumList = fromArrayToList(
+        // new Interno[] { new Interno("Paco", "Fernández") });
+
+        // imprimirexternos(externos);
+        // imprimirexternos(externosLista);
+        // imprimirexternos(externosPremiumList);
+
+        // System.out.println("Máximo de 1, 9 y 4 es: " + maximo(1, 9, 4));
+        // System.out.println("Máximo de 3.9, 11.6, 7.78 es: " + maximo(3.9, 11.6,
+        // 7.78));
+        // System.out.println("Máximo de zanahoria, arándanos, manzana es: "
+        // + maximo("zanahoria", "arándano", "manzana"));
 
     }
 
     // ----------------
-    public static List<String> fromArrayToListString(String[] c) {
-        return Arrays.asList(c);
-    }
+    // public static List<String> fromArrayToListString(String[] c) {
+    // return Arrays.asList(c);
+    // }
 
-    public static <T> List<T> fromArrayToList(T[] c) {
+    // public static List<Integer> fromArrayToListIntegers(Integer[] c) {
+    // return Arrays.asList(c);
+    // }
+
+    public static <G> List<G> fromArrayToList(G[] c) {
         return Arrays.asList(c);
     }
 
@@ -72,10 +94,18 @@ public class EjemploGens {
         return Arrays.asList(c);
     }
 
-    public static <T, G> List<T> fromArrayToList(T[] c, G[] x) {
+    // public static <T, G> List<T> fromArrayToList(T[] c, G[] x) {
+    // for (G elemento : x) {
+    // System.out.println(elemento);
+    // }
+    // return Arrays.asList(c);
+    // }
+
+    public static <T, G> List<T> fromArrayToListaPrint(T[] c, G[] x) {
         for (G elemento : x) {
             System.out.println(elemento);
         }
+        System.out.println("fALP-------------------------------------------------------------");
         return Arrays.asList(c);
     }
 

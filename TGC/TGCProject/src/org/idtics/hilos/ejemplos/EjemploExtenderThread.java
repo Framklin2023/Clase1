@@ -4,14 +4,17 @@ import org.idtics.hilos.ejemplos.threads.ClaseThread;
 
 public class EjemploExtenderThread {
     public static void main(String[] args) throws InterruptedException {
-        Thread hilo = new ClaseThread("Uno");
-        hilo.start();
+        Thread uno = new ClaseThread("Uno");
+        uno.start();
         // Thread.sleep(2);
-        Thread hilo2 = new ClaseThread("Dos");
-        hilo2.start();
+        Thread dos = new ClaseThread("Dos");
+        dos.start();
 
-        ClaseThread hilo3 = new ClaseThread("Tres");
-        hilo3.start();
-        System.out.println(hilo.getState());
+        ClaseThread tres = new ClaseThread("Tres");
+        tres.start();
+
+        ClaseThread cuatro = new ClaseThread("Cuatro");
+        cuatro.start();
+        System.out.println("Aquí seguiría funcionando el método main: ");
     }
 }

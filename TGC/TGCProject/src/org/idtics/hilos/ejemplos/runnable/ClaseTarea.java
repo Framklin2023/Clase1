@@ -13,7 +13,7 @@ public class ClaseTarea implements Runnable {
 
     @Override
     public void run() {
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 3; i++) {
             System.out.println(i + " - " + nombre);
             try {
                 Thread.sleep((long) (Math.random() * 1000));

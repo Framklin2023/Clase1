@@ -9,7 +9,7 @@ public class ClaseThread extends Thread {
     public void run() {
         System.out.println("Inicia el hilo: " + getName());
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 2; i++) {
             try {
                 Thread.sleep(10);
             } catch (InterruptedException e) {
@@ -17,6 +17,6 @@ public class ClaseThread extends Thread {
             }
             System.out.println(this.getName());
         }
-        System.out.println("finaliza el hilo");
+        System.out.println("finalizó  el hilo: " + this.getName());
     }
 }
