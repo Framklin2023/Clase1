@@ -1,5 +1,5 @@
 package org.idtics.myinterfaces.codigos;
 
-public interface Ventas {
+public interface Conteo {
     int total();
 }
