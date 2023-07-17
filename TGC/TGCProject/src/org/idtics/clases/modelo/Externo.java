@@ -44,9 +44,7 @@ public class Externo {
 
     @Override
     public String toString() {
-        return "id=" + id +
-                ", nombre='" + nombre + '\'' +
-                ", apellido='" + apellido + '\'';
+        return "id=" + id + ",  " + apellido + " " + nombre;
     }
 
     @Override

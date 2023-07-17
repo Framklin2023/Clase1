@@ -2,6 +2,8 @@ package org.idtics.generics;
 
 // import java.util.ArrayList;
 import java.util.Arrays;
+// import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 import org.idtics.clases.modelo.Externo;
@@ -9,31 +11,37 @@ import org.idtics.clases.modelo.Externo;
 
 public class EjemploGens {
     public static void main(String[] args) {
-        System.out.println("-------------------------------------------------------------");
-        Integer[] numeros = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-        List<Integer> numeroList = fromArrayToList(numeros);
-        // List<Integer> numeroList = fromArrayToListIntegers(numeros);
-        numeroList.forEach(e -> System.out.println(e));
-        System.out.println("-------------------------------------------------------------");
-        String[] stringsArreglo = { "Uno", "Dos", "Tres", "Cuatro", "Cinco", "Seis", "Siete", "Ocho", "Nueve", "Diez" };
-        List<String> stringsList = fromArrayToList(stringsArreglo);
-        // stringsLista.forEach(e -> System.out.println(e));
-        stringsList.forEach(System.out::println);
-        System.out.println("-------------------------------------------------------------");
-        Float[] floatsArreglo = { 3.9f, 11.8f, 12.7f, 13.6f, 14.5f };
-        List<Float> floatsList = fromArrayToList(floatsArreglo);
-        floatsList.forEach(System.out::println);
+        // System.out.println("-------------------------------------------------------------");
+        // Integer[] numeros = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+        // List<Integer> numeroList = fromArrayToList(numeros);
+        // // List<Integer> numeroList = fromArrayToListIntegers(numeros);
+        // numeroList.forEach(e -> System.out.println(e));
+        // System.out.println("-------------------------------------------------------------");
+        // String[] stringsArreglo = { "Uno", "Dos", "Tres", "Cuatro", "Cinco", "Seis",
+        // "Siete", "Ocho", "Nueve", "Diez" };
+        // List<String> stringsList = fromArrayToList(stringsArreglo);
+        // // stringsLista.forEach(e -> System.out.println(e));
+        // stringsList.forEach(System.out::println);
+        // System.out.println("-------------------------------------------------------------");
+        // Float[] floatsArreglo = { 3.9f, 11.8f, 12.7f, 13.6f, 14.5f };
+        // List<Float> floatsList = fromArrayToList(floatsArreglo);
+        // floatsList.forEach(System.out::println);
         System.out.println("-------------------------------------------------------------");
         Externo[] externosArreglo = {
                 new Externo("Luca", "Modric"),
                 new Externo("Lebrón", "Messi"),
                 new Externo("María", "Bonita"),
                 new Externo("Ivanna", "Iturbe") };
-        // List<Externo> externosList = fromArrayToList(externosArreglo);
+        List<Externo> externosList = fromArrayToList(externosArreglo);
         // externosList.forEach(System.out::println);
-        List<Externo> externosList = fromArrayToListaPrint(externosArreglo, floatsArreglo);
+        // List<Externo> externosList = fromArrayToListaPrint(externosArreglo,
+        // floatsArreglo);
         externosList.forEach(System.out::println);
         System.out.println("-------------------------------------------------------------");
+        Collections.sort(externosList, new MyComparator<Externo>(null, null, false));
+        externosList.forEach(System.out::println);
+        System.out.println("-------------------------------------------------------------");
+
         // List<Externo> externos = new ArrayList<>();c
         // externos.add(new Externo("Lebrón", "Messi"));
 
