@@ -1,10 +1,13 @@
 package org.idtics.generics;
 
-// import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.*;
 // import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
+// import java.util.Collections;
+import java.util.IntSummaryStatistics;
+
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 import org.idtics.clases.modelo.Externo;
 // import org.idtics.clases.modelo.Interno;
@@ -25,22 +28,78 @@ public class EjemploGens {
         // System.out.println("-------------------------------------------------------------");
         // Float[] floatsArreglo = { 3.9f, 11.8f, 12.7f, 13.6f, 14.5f };
         // List<Float> floatsList = fromArrayToList(floatsArreglo);
-        // floatsList.forEach(System.out::println);
-        System.out.println("-------------------------------------------------------------");
+        // // floatsList.forEach(System.out::println);
+        // System.out.println("-------------------------------------------------------------");
         Externo[] externosArreglo = {
                 new Externo("Luca", "Modric"),
                 new Externo("Lebrón", "Messi"),
                 new Externo("María", "Bonita"),
                 new Externo("Ivanna", "Iturbe") };
-        List<Externo> externosList = fromArrayToList(externosArreglo);
+        // List<Externo> extr = fromArrayToList(externosArreglo);
+        // // List<String> names = new ArrayList<>();
+
+        // extr.stream().forEach(e -> System.out.println(e));
+
+        externosList.forEach(System.out::println);
+        // // List<Externo> externosList = fromArrayToListaPrint(externosArreglo,
+        // // floatsArreglo);
         // externosList.forEach(System.out::println);
-        // List<Externo> externosList = fromArrayToListaPrint(externosArreglo,
-        // floatsArreglo);
-        externosList.forEach(System.out::println);
-        System.out.println("-------------------------------------------------------------");
-        Collections.sort(externosList, new MyComparator<Externo>(null, null, false));
-        externosList.forEach(System.out::println);
-        System.out.println("-------------------------------------------------------------");
+        // System.out.println("Con
+        // Stream-------------------------------------------------------------");
+        // externosList.stream().forEach(System.out::println);
+        // System.out.println("Creando
+        // Stream-------------------------------------------------------------");
+        // Stream<Externo> externos = Stream.of(new Externo("Luca", "Modric"),
+        // new Externo("Lebrón", "Messi"),
+        // new Externo("María", "Bonita"),
+        // new Externo("Ivanna", "Iturbe"))
+        // .distinct();
+        // externos.forEach(System.out::println);
+        // System.out.println("Creando Stream
+        // 2-------------------------------------------------------------");
+
+        // Stream<Externo> extrs = Stream
+        // .of("Uno One", "Dos Two", "Tres Three", "Cuatro Four",
+        // "Cinco Five", "Seis Six")
+        // .map(nombre -> new Externo(nombre.split(" ")[0], nombre.split(" ")[1]))
+        // .distinct();
+
+        // extrs.forEach(System.out::println);
+        // System.out.println("Uso de Stream
+        // 3-------------------------------------------------------------");
+
+        // IntStream largoNombres = Stream
+        // .of("Uno One", "Dos Two", "Tres Three", "Cuatro Four",
+        // "Cinco Five", "Seis Six")
+        // .map(nombre -> new Externo(nombre.split(" ")[0], nombre.split(" ")[1]))
+        // .distinct()
+        // .mapToInt(u -> u.toString().length())
+        // .peek(System.out::println);
+
+        // // largoNombres.forEach(System.out::println);
+        // IntSummaryStatistics stats = largoNombres.summaryStatistics();
+        // System.out.println("total: " + stats.getSum());
+        // System.out.println("max: " + stats.getMax());
+        // System.out.println("Min = " + stats.getMin());
+        // System.out.println("promedio :" + stats.getAverage());
+
+        // System.out.println("Uso de filtros con Stream
+        // -------------------------------------------------------------");
+        // Stream<Externo> filtrado = Stream.of(new Externo("Luca", "Modric"),
+        // new Externo("Lebrón", "Messi"),
+        // new Externo("María", "Bonita"),
+        // new Externo("Ivanna", "Iturbe"))
+        // .filter(u -> u.getApellido().equals("Messi"))
+        // .peek(System.out::println);
+        // List<Externo> lista = filtrado.collect(Collectors.toList());
+        // System.out.println("Convirtiendo a lista
+        // -------------------------------------------------------------");
+
+        // lista.forEach(System.out::println);
+        // System.out.println("-------------------------------------------------------------");
+        // Collections.sort(externosList, new MyComparator<Externo>(null, null, false));
+        // externosList.forEach(System.out::println);
+        // System.out.println("-------------------------------------------------------------");
 
         // List<Externo> externos = new ArrayList<>();c
         // externos.add(new Externo("Lebrón", "Messi"));
