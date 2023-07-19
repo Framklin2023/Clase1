@@ -6,8 +6,8 @@ public class EjemploStreamReduce {
     public static void main(String[] args) {
 
         Stream<String> nombres = Stream
-                .of("Uno One", "Dos Two", "Tres Three", "Cuatro Four",
-                        "Cinco Five", "Seis Six")
+                .of("Uno ", "Dos ", "Tres ", "Cuatro ",
+                        "Cinco ", "Seis ")
                 .distinct();
 
         String resultado = nombres.reduce("resultado concatenación \n", (a, b) -> a + " -> " + b + "\n");

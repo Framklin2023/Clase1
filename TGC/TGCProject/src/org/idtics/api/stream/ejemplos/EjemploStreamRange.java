@@ -7,7 +7,7 @@ import java.util.stream.IntStream;
 public class EjemploStreamRange {
     public static void main(String[] args) {
 
-        IntStream num = IntStream.range(5, 20).peek(System.out::println);
+        IntStream num = IntStream.range(15, 20).peek(System.out::println);
 
         IntSummaryStatistics stats = num.summaryStatistics();
         System.out.println("max: " + stats.getMax());

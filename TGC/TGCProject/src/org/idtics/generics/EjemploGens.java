@@ -39,24 +39,22 @@ public class EjemploGens {
         // // List<String> names = new ArrayList<>();
 
         // extr.stream().forEach(e -> System.out.println(e));
-
+        List<Externo> externosList = fromArrayToList(externosArreglo);
         externosList.forEach(System.out::println);
         // // List<Externo> externosList = fromArrayToListaPrint(externosArreglo,
-        // // floatsArreglo);
+        // floatsArreglo);
         // externosList.forEach(System.out::println);
-        // System.out.println("Con
-        // Stream-------------------------------------------------------------");
+        System.out.println("Con Stream-------------------------------------------------------------");
         // externosList.stream().forEach(System.out::println);
         // System.out.println("Creando
         // Stream-------------------------------------------------------------");
-        // Stream<Externo> externos = Stream.of(new Externo("Luca", "Modric"),
-        // new Externo("Lebrón", "Messi"),
-        // new Externo("María", "Bonita"),
-        // new Externo("Ivanna", "Iturbe"))
-        // .distinct();
-        // externos.forEach(System.out::println);
-        // System.out.println("Creando Stream
-        // 2-------------------------------------------------------------");
+        Stream<Externo> externos = Stream.of(new Externo("Luca", "Modric"),
+                new Externo("Lebrón", "Messi"),
+                new Externo("María", "Bonita"),
+                new Externo("Ivanna", "Iturbe"))
+                .distinct();
+        externos.forEach(System.out::println);
+        System.out.println("Creando Stream2-------------------------------------------------------------");
 
         // Stream<Externo> extrs = Stream
         // .of("Uno One", "Dos Two", "Tres Three", "Cuatro Four",
